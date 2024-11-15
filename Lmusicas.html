@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    body {
+      background-color: black;
+    }
+    #capa {
+      background-image: linear-gradient(to bottom, #094984, black);
+      width: 98%;
+      padding: 10px;
+      margin: auto;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 80px;
+    }
+
+    h5 {
+      font-size: 25px;
+      padding-left: 5px;
+    }
+
+    p {
+      font-size: 20px;
+      padding-left: 5px;
+    }
+
+    .card-group {
+      margin-top: 10px;
+    }
+
+    .card {
+      background-color: #09253F;
+      width: 292px;
+      color: white;
+      font-size: 30px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      transition: transform 0.5s;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+    }
+
+    .card-text {
+      padding-left: 5px;
+      color: white;
+    }
+
+    img {
+      object-fit: cover;
+      width: 18rem;
+      height: 150px;
+      border-radius: 5px;
+      border: solid;
+    }
+    </style>
+</head>
+<body>
+    <header id="capa">
+        <h1 class="title">Sonix</h1>
+        <p id="genre"></p>
+    </header>
+    <div class="card-group" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+    <div class="card" style="width: 18rem; border: solid; border-radius: 5px;" onclick="redirectToSong(title)">
+        <div style="background-color: gray; height: 100px; text-align: center;">
+            Image cap
+        </div>
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem; border: solid; border-radius: 5px;" onclick="redirectToSong(title)">
+        <div style="background-color: gray; height: 100px; text-align: center;">
+            Image cap
+        </div>
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem; border: solid; border-radius: 5px;" onclick="redirectToSong(title)">
+        <div style="background-color: gray; height: 100px; text-align: center;">
+            Image cap
+        </div>
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem; border: solid; border-radius: 5px;" onclick="redirectToSong(title)">
+        <div style="background-color: gray; height: 100px; text-align: center;">
+            Image cap
+        </div>
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem; border: solid; border-radius: 5px;" onclick="redirectToSong(title)">
+        <div style="background-color: gray; height: 100px; text-align: center;">
+            Image cap
+        </div>
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <script src="sonix.js"></script>
+    <script>
+      function redirectedToSong(title) {
+      window.location = `song.html?title=${encodeURIComponent(title)}`;
+    }
+    </script>
+</body>
+</html>

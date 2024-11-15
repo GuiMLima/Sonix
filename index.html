@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #09253F;
+        }
+        #capa {
+            background-color: #09253F;
+            width: 90%;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .imagem {
+            height: 300px;
+            width: 300px;
+            background: url("imagem/sonixLogo.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-left: 5%;
+        }
+        .title {
+            font-size: 100px;
+            color: white;
+            margin-left: 7%;
+            margin-top: 10%;
+        }
+
+        .content {
+           margin-left: 25px;
+           margin-top: -40px;
+        }
+
+        .subHeader {
+            width: 300px;
+        }
+
+        .listCategories {
+            margin-left: 25px;
+        }
+
+        .category {
+            background-color: #08569f;
+        }
+
+        .category:hover {
+            background-color: #073e72;
+            transition: 0.5s;
+        }
+
+        #listName {
+            width: 240px;
+        }
+
+        li {
+            list-style-type: none;
+            font-size: 18px;
+            font-weight: 900;
+            color: white;
+            position: relative;
+            left: -5%;
+        }
+
+        #listName {
+            margin-top: -20%;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: 736px) and (max-width: 949px){
+            #capa {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+            }
+
+            .content {
+                position: relative;
+                left: -2%;
+            }
+        }
+
+        @media screen and (min-width: 950px) and (max-width: 2000px) {
+            #capa {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="capa">
+        <div class="imagem">
+        </div>
+        <div class="content">
+            <h1 class="title">Sonix</h1>
+            <ul id="listName">
+                <li style="text-align: center;">Autores</li>
+                <li style=" padding: 5px; border: solid white; border-top-left-radius: 15px; border-top-right-radius: 15px;">Guilherme Marques de Lima RA:248151</li>
+                <li style="padding: 5px; border: solid  white; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px">Vinícius Guilherme Vasques RA:248721</li>
+            </ul>
+        </div>
+        <div class="subHeader">
+            <ul class="listCategories">
+                <li style="background-color: #08569f; width: 95px; border-radius: 14px; padding-left: 5px; margin-bottom: 5px;">Categorias</li>
+                <li class="category" style="border-top-left-radius: 15px; border-top-right-radius: 15px; color: white; padding: 5px; list-style-type: none;"><a href="Lmusicas.html?genre=Heavy Metal">Heavy Metal</a></li>
+                <li class="category" style="color: white; padding: 5px;"><a href="Lmusicas.html?genre=Rock">Rock</a></li>
+                <li class="category" style="border-bottom-left-radius: 15px;border-bottom-right-radius: 15px; color: white; padding: 5px;"><a href="Lmusicas.html?genre=Pop">Pop</a></li>
+            </ul>
+        </div>
+    </header>
+</body>
+</html>

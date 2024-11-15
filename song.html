@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        p {
+            font-size: 25px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 215px;
+            margin: auto;
+
+        }
+
+        a {
+            font-size: 25px;
+            color: aliceblue;
+            background-color: #09253F;
+            color: white;
+            padding: 3px;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        a:hover {
+            background-color: #08569f;
+            border: solid white;
+            color: white;
+        }
+
+        .imgArea {
+            width: 100%;
+            background-color: aqua;
+            height: 215px;
+        }
+
+        .infoArea {
+            background-color: #08569f;
+            padding-left:5px;
+            padding-top: 1px;
+            padding-bottom: 5px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        @media screen and (min-width: 750px) and (max-width: 2000px) {
+            main {
+            background-color: #09253F;
+            width: 97%;
+            height: 500px;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            }
+            .imgArea {
+                width: 50%;
+                height: 90%;
+            }
+            .infoArea {
+                border-radius: 10px;
+                width: 45%;
+            }
+            img {
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+    <div class="imgArea">
+        <img id="music-cover" alt="Capa da Música">
+    </div>
+        <div class="infoArea">
+            <h1 id="music-title"></h1>
+            <p id="music-band"></p>
+            <p id="music-album"></p>
+            <p id="music-genre"></p>
+            <p id="music-length"></p>
+            <p id="music-description"></p>
+            <p id="music-authors"></p>
+            <a href="" id="music-link" target="_blank">Listen</a>
+        </div>
+    </main>
+<script>
+    document.addEventListener("DOMContentLoaded", async() => {
+        const process_params = new URLSearchParams(window.location.search);
+        const title = process_params.get('title');
+        if (title) {
+        const songs = await fetch("musicas.json");
+        if (songs.ok) {
+            const musics = await songs.json();
+            const music = musics.find(m => m.title === title);
+
+            if (music) {
+                document.getElementById("music-title").innerText = `${music.title}`;
+                document.getElementById("music-cover").src = music.cover;
+                document.getElementById("music-band").innerText = `Band: ${music.band}`;
+                document.getElementById("music-album").innerText = `Album: ${music.album}`;
+                document.getElementById("music-genre").innerText = `Genrer: ${music.genre}`;
+                document.getElementById("music-description").innerText = `${music.description}` ;
+                document.getElementById("music-authors").innerText = `Authors: ${music.authors}`;
+                document.getElementById("music-link").href = music.link;
+            } else {
+                document.body.innerHTML = "<h1>Música não encontrada</h1>";
+            }
+        } else {
+            document.body.innerHTML = "<h1>Nenhum título de música especificado</h1>";
+        }
+        }
+    });
+</script>
+</body>
+</html>
